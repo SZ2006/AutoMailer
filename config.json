@@ -1,0 +1,7 @@
+{
+  "smtp_host": "sandbox.smtp.mailtrap.io",
+  "smtp_port": 587,
+  "username": "6a74f58bb332a9",
+  "password": "ca89364513f25c",
+  "from": "jouw@email.com"
+}
