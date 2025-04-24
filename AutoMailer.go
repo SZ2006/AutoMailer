@@ -8,10 +8,9 @@ import (
 	"os"
 	"path/filepath"
 
-	gomail "gopkg.in/mail.v2" // Geef een alias om naamconflict te voorkomen
+	gomail "gopkg.in/mail.v2"
 )
 
-// Foutmeldingen als constante waarden
 const (
 	errTeWeinigParams     = "Te weinig parameters. Gebruik: automailer <bestandspad> <e-mailadres>"
 	errBestandBestaatNiet = "Fout: opgegeven bestand bestaat niet."
@@ -20,7 +19,6 @@ const (
 	errVerzendenEmail     = "Fout bij verzenden van e-mail."
 )
 
-// Structuur voor de instellingen uit config.json
 type Config struct {
 	SMTPHost string `json:"smtp_host"`
 	SMTPPort int    `json:"smtp_port"`
@@ -30,7 +28,6 @@ type Config struct {
 }
 
 func main() {
-	// Open of maak een logbestand aan
 	logBestand, _ := os.OpenFile("automailer.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	defer logBestand.Close()
 	log.SetOutput(logBestand)
